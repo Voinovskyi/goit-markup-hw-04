@@ -110,6 +110,22 @@ ol {
   color: #404bbf;
 }
 
+.current {
+  position: relative;
+}
+
+.current::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+  bottom: -3px;
+  left: 0;
+  display: block;
+}
+
 .header-call {
   font-style: normal;
   padding: 24px 0;
@@ -135,6 +151,14 @@ ol {
 /**********MAIN**********/
 
 .main-hero {
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   background-color: #2e2f42;
   text-align: center;
   padding: 188px 0;
@@ -187,6 +211,55 @@ ol {
 
 .info-main_link {
   width: calc((100% - 72px) / 4);
+}
+
+.portfolio-link {
+  display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-link:hover,
+.portfolio-link:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  transform: translateY(0%);
+}
+
+.portfolio-position {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-link:hover .portfolio-position_image,
+.portfolio-link:focus .portfolio-position_image {
+  transform: translateY(0%);
+}
+
+.portfolio-position_image {
+  position: absolute;
+  background-color: rgba(77, 90, 229, 1);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 40px 32px;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icons-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 264px;
+  height: 112px;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  background-color: #f4f4fd;
 }
 
 .info-main_par {
@@ -253,6 +326,41 @@ ol {
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-align: center;
+  padding-bottom: 8px;
+}
+
+.social-media {
+  display: flex;
+  cursor: pointer;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 24px;
+}
+
+.social-media_list {
+  width: 40px;
+  height: 40px;
+}
+
+.social-media_link {
+  background-color: #404bbf;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-media_link:hover {
+  background-color: #31d0aa;
+}
+
+.social-media_icons {
+  fill: #f4f4fd;
 }
 
 /**********Section4-Portfolio**********/
@@ -308,6 +416,15 @@ ol {
   padding: 100px 0;
 }
 
+.footer-content {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-info {
+  margin-right: 120px;
+}
+
 .logo-footer {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
@@ -330,4 +447,23 @@ ol {
   line-height: 24px;
   letter-spacing: 0.32px;
   max-width: 264px;
+}
+
+.footer-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.social-media_footer {
+  display: flex;
+  cursor: pointer;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
 }
